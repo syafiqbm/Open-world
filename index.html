@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open World</title><style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: "Segoe UI", sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0b0f1a;
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+nav h2{
+color:#4fd1ff;
+letter-spacing:2px;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#4fd1ff;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(120deg,#0b0f1a,#1b2735,#090a0f);
+}
+
+.hero h1{
+font-size:70px;
+letter-spacing:4px;
+background:linear-gradient(90deg,#4fd1ff,#9f7aea);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+margin-top:20px;
+font-size:20px;
+opacity:0.8;
+}
+
+.hero button{
+margin-top:40px;
+padding:15px 35px;
+border:none;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+background:linear-gradient(90deg,#4fd1ff,#9f7aea);
+color:white;
+transition:0.4s;
+}
+
+.hero button:hover{
+transform:scale(1.1);
+}
+
+/* SECTION */
+
+section{
+padding:100px 10%;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+margin-bottom:60px;
+color:#4fd1ff;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#111827;
+padding:40px;
+border-radius:15px;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:#1f2937;
+}
+
+.card h3{
+margin-bottom:15px;
+color:#9f7aea;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+}
+
+/* FOOTER */
+
+footer{
+background:#020617;
+padding:40px;
+text-align:center;
+margin-top:80px;
+}
+
+footer p{
+opacity:0.7;
+}
+
+/* ANIMATION */
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+</style></head><body><nav><h2>OPEN WORLD</h2><ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#about">About</a></li>
+</ul></nav><section class="hero" id="home"><div><h1>OPEN WORLD</h1><p>
+Selamat datang di dunia open world digital.  
+Sebuah tempat dimana kreativitas, teknologi, dan imajinasi bertemu.
+</p><button>Explore World</button>
+
+</div></section><section id="features"><h2 class="title">Features</h2><div class="grid"><div class="card fade">
+<h3>Massive World</h3>
+<p>Dunia yang luas untuk dijelajahi tanpa batas.</p>
+</div><div class="card fade">
+<h3>Dynamic Environment</h3>
+<p>Lingkungan berubah secara real time.</p>
+</div><div class="card fade">
+<h3>Adventure</h3>
+<p>Petualangan dan misteri menunggu.</p>
+</div><div class="card fade">
+<h3>Freedom</h3>
+<p>Kebebasan untuk bermain dengan cara kamu.</p>
+</div></div></section><section id="gallery"><h2 class="title">World Gallery</h2><div class="gallery"><img src="https://picsum.photos/600/400?random=1">
+<img src="https://picsum.photos/600/400?random=2">
+<img src="https://picsum.photos/600/400?random=3">
+<img src="https://picsum.photos/600/400?random=4">
+<img src="https://picsum.photos/600/400?random=5">
+<img src="https://picsum.photos/600/400?random=6"></div></section><section id="about"><h2 class="title">About This World</h2><div class="about"><img src="https://picsum.photos/500/400"><div><p>
+Website ini adalah contoh konsep open world digital.  
+Dibangun menggunakan HTML, CSS, dan JavaScript.
+</p><br><p>
+Tujuannya adalah menciptakan pengalaman visual modern,
+minimalis, dan elegan.
+</p></div></div></section><footer><p>
+© 2026 Open World Website
+</p></footer><script>
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show")
+}
+})
+})
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el)
+})
+
+</script></body>
+</html>
